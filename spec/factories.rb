@@ -5,4 +5,8 @@ FactoryGirl.define do
     price 10.0
   end
 
+  factory :category do
+    title 'Kitchen'
+  end
+
 end

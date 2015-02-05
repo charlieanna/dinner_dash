@@ -1,3 +1,8 @@
+<ul class="categories">
+	<% @categories.each do |category| %>
+	  <%= link_to category.title, category %>
+	<% end %>
+</ul>
 <ul class="items">
 	<% @items.each do |item| %>
 	  <li class='title'><%= item.title %></li>

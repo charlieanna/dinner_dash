@@ -12,4 +12,12 @@ feature 'unauthenticated user views home page' do
     expect(page).to have_css 'ul.items li.description', text: 'Goat Cheese'
     expect(page).to have_css 'ul.items li.price', text: '20.0'
   end
+
+  scenario 'can see all the categories' do
+    FactoryGirl.create(:category, title: "Kitchen")
+    FactoryGirl.create(:category, title: "Men")
+    visit root_path
+    expect(page).to have_link 'Kitchen'
+    expect(page).to have_link 'Men'
+  end
 end
