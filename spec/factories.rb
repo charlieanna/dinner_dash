@@ -3,10 +3,10 @@ FactoryGirl.define do
     title 'Milk'
     description 'Slim Milk'
     price 10.0
+    category
   end
 
   factory :category do
     title 'Kitchen'
   end
-
 end

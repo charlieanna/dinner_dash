@@ -20,4 +20,15 @@ feature 'unauthenticated user views home page' do
     expect(page).to have_link 'Kitchen'
     expect(page).to have_link 'Men'
   end
+
+  scenario 'can click on a category and view the items' do
+
+    category = FactoryGirl.create(:category, title: "Kitchen")
+    item1 = FactoryGirl.create(:item, title: 'Plate', category: category)
+  	item2 = FactoryGirl.create(:item, title: 'Kadaai', category: category)
+    visit root_path
+    click_link 'Kitchen'
+    expect(page).to have_css 'ul.items li.title', text: 'Plate'
+    expect(page).to have_css 'ul.items li.title', text: 'Kadaai'
+  end
 end
