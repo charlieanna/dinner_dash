@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<span class='cart'><%= @cart.line_items.count %></span>
 <%= yield %>
 
 </body>
