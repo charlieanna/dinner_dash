@@ -50,5 +50,6 @@ feature 'unauthenticated user views home page' do
       click_button 'Add to Cart'
     end
     expect(page).to have_text 'Line item was successfully created.'
+    expect(page).to have_text 'You have 0 items in your cart'
   end
 end

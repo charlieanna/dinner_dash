@@ -1,11 +1,13 @@
 module Features
   def sign_in
-    sign_in_as "person@exmaple.com"
+    sign_in_as "person@example.com"
   end
 
-  def sign_in_as(email)
+  def sign_in_as(user)
     visit root_path
-    fill_in "Email", with: email
-    click_on "Sign in"
+    click_link "Login"
+    fill_in 'email', with: user.email
+    fill_in 'password',with: user.password
+    click_button 'Login'
   end
 end

@@ -2,6 +2,7 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 <h2>Your Pragmatic Cart</h2>
+<%= "You have #{@cart.line_items.count} items in your cart" %>
 <ul>
   <% @cart.line_items.each do |line_item| %>
     <li><%= line_item.title %></li>
