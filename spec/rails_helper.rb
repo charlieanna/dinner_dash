@@ -21,9 +21,9 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
-  config.include Features, type: :feature
+  config.include Feature, type: :feature
   config.use_transactional_fixtures = false
-
+  # config.include Features, :type => :features
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.

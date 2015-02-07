@@ -5,7 +5,7 @@
 <%= "You have #{@cart.line_items.count} items in your cart" %>
 <ul>
   <% @cart.line_items.each do |line_item| %>
-    <li><%= line_item.title %></li>
-     <td><%= link_to 'Remove', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <li><td><%= link_to line_item.quantity, edit_line_item_path(line_item) %></td> &times; <%= line_item.title %></li>
+    <td><%= link_to 'Remove', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 </ul>

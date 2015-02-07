@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
+      set_cart
       redirect_to '/', alert: "You have successfully signed up"
     else
       redirect_to '/signup', alert: "Something went wrong"

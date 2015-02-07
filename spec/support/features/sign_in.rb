@@ -1,4 +1,4 @@
-module Features
+module Feature
   def sign_in
     sign_in_as "person@example.com"
   end
