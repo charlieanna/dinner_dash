@@ -33,4 +33,7 @@ feature 'user signs in' do
     expect(page).to have_button 'Login'
     expect(page).to have_text 'Signed out successfully'
 	end
+
+  scenario 'does not clear the cart' do
+  end
 end
