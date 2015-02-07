@@ -57,7 +57,7 @@
       to see more useful Rails Best Practices.
     </p>
     <p>
-        Found 3 warnings.
+        Found 5 warnings.
     </p>
     <table>
           <tr>
@@ -66,8 +66,8 @@
                 />&nbsp;<label for="AlwaysAddDbIndexReview">Always Add Db Index</label>
               </td>
               <td>
-                <input type="checkbox" class="error-type" id="RemoveUnusedMethodsInControllersReview" value="RemoveUnusedMethodsInControllersReview"
-                />&nbsp;<label for="RemoveUnusedMethodsInControllersReview">Remove Unused Methods In Controllers</label>
+                <input type="checkbox" class="error-type" id="MoveModelLogicIntoModelReview" value="MoveModelLogicIntoModelReview"
+                />&nbsp;<label for="MoveModelLogicIntoModelReview">Move Model Logic Into Model</label>
               </td>
               <td>
                 <input type="checkbox" class="error-type" id="SimplifyRenderInControllersReview" value="SimplifyRenderInControllersReview"
@@ -94,25 +94,43 @@
             <td class='filename'>
                 db/schema.rb
             </td>
-            <td class='line'>27</td>
+            <td class='line'>16</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (carts => [user_id])</a>
+            </td>
+          </tr>
+          <tr class="AlwaysAddDbIndexReview">
+            <td class='filename'>
+                db/schema.rb
+            </td>
+            <td class='line'>28</td>
             <td class='message'>
               <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (items => [category_id])</a>
             </td>
           </tr>
-          <tr class="RemoveUnusedMethodsInControllersReview">
+          <tr class="MoveModelLogicIntoModelReview">
             <td class='filename'>
-                app/controllers/concerns/current_cart.rb
+                app/controllers/line_items_controller.rb
             </td>
-            <td class='line'>6</td>
+            <td class='line'>5</td>
             <td class='message'>
-              <a href='' target='_blank'>remove unused methods (CategoriesController#set_cart)</a>
+              <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (@line_item use_count > 4)</a>
             </td>
           </tr>
           <tr class="SimplifyRenderInControllersReview">
             <td class='filename'>
                 app/controllers/line_items_controller.rb
             </td>
-            <td class='line'>13</td>
+            <td class='line'>14</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/62-simplify-render-in-controllers' target='_blank'>simplify render in controllers</a>
+            </td>
+          </tr>
+          <tr class="SimplifyRenderInControllersReview">
+            <td class='filename'>
+                app/controllers/line_items_controller.rb
+            </td>
+            <td class='line'>32</td>
             <td class='message'>
               <a href='http://rails-bestpractices.com/posts/62-simplify-render-in-controllers' target='_blank'>simplify render in controllers</a>
             </td>

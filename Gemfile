@@ -28,6 +28,10 @@ gem 'spring',        group: :development
 group :development do
 	gem "rails_best_practices"
 end
+
+group :development, :test do
+  gem 'awesome_print'
+end
 group :test do
   gem 'rspec-rails', '~> 3.0.1'
   gem 'capybara', '~> 2.3.0'

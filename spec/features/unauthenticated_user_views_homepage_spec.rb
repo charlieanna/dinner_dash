@@ -52,4 +52,26 @@ feature 'unauthenticated user views home page' do
     expect(page).to have_text 'Line item was successfully created.'
     expect(page).to have_text 'You have 1 items in your cart'
   end
+
+  scenario "cannot Checkout (until they log in)" do
+  end
+
+  scenario "cannot View another user’s private data (such as current order, etc.)" do
+    FactoryGirl.create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    user1 = FactoryGirl.create(:user)
+    sign_in_as user1
+    within('ul.items li#1') do
+      click_button 'Add to Cart'
+    end
+    click_link 'Logout'
+    click_link "My Cart"
+    expect(page).to have_text 'You have 0 items in your cart'
+    user2 = FactoryGirl.create(:user)
+    sign_in_as user2
+    within('ul.items li#1') do
+      click_button 'Add to Cart'
+    end
+    click_link "My Cart"
+    expect(page).to have_text 'You have 1 items in your cart'
+  end
 end

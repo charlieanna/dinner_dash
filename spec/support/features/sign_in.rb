@@ -1,6 +1,7 @@
 module Feature
   def sign_in
-    sign_in_as "person@example.com"
+    user = FactoryGirl.create(:user)
+    sign_in_as user
   end
 
   def sign_in_as(user)

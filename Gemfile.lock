@@ -169,6 +169,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bcrypt
   capybara (~> 2.3.0)
   coffee-rails (~> 4.0.0)
