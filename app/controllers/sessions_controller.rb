@@ -15,4 +15,9 @@ class SessionsController < ApplicationController
       redirect_to '/login', alert: 'Email and password do not match, try again.'
     end
   end
+
+   def destroy
+    session[:user_id] = nil
+    redirect_to '/login', alert: "Signed out successfully"
+  end
 end

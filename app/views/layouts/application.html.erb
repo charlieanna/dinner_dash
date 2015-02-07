@@ -11,7 +11,7 @@
     <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
 <% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+  <span class="current_user">Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %></span>
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>

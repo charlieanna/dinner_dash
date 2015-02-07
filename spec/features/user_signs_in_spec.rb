@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'user signs in' do
 	scenario 'with email and password' do
+    FactoryGirl.create(:user)
     visit root_path
     click_link 'Login'
     fill_in 'email', with: "person@example.com"
@@ -9,7 +10,7 @@ feature 'user signs in' do
     click_button 'Login'
     expect(page).not_to have_link 'Login'
     expect(page).to have_link 'Logout'
-    expect(page).to have_css '.current_user', text: "person@example.com"
+    expect(page).to have_css '.current_user', text: "Signed in as person@example.com"
 	end
 
 	scenario 'wrong email and password' do
@@ -22,6 +23,7 @@ feature 'user signs in' do
 	end
 
 	scenario 'can sign out' do
+    FactoryGirl.create(:user)
 	  visit root_path
     click_link 'Login'
     fill_in 'email', with: "person@example.com"

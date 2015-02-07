@@ -9,4 +9,10 @@ FactoryGirl.define do
   factory :category do
     title 'Kitchen'
   end
+
+  factory :user do
+  	email "person@example.com"
+  	password "aaaaaa"
+  	name "ankur"
+  end
 end
