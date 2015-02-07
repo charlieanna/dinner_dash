@@ -16,4 +16,15 @@ class LineItemsController < ApplicationController
       end
     end
   end
+
+  def destroy
+  	@line_item.destroy
+    redirect_to root_path, alert: "Item has been successfully removed"
+  end
+
+  private
+
+  def set_line_item
+  	@line_item = LineItem.find(params[:id])
+  end
 end

@@ -12,7 +12,8 @@
   <% end %>
 <% if current_user %>
   <span class="current_user">Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %></span>
-  <%= link_to "My Cart", current_user.cart %>
+  <%= link_to "#{current_user.cart.line_items.count} items My Cart", current_user.cart %>
+
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>

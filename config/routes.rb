@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
-  resources :line_items, only: [:create]
+  resources :line_items, only: [:create, :destroy]
   resources :cart, only: [:show]
 end

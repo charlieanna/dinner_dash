@@ -1,4 +1,12 @@
 FactoryGirl.define do
+  factory :cart do
+  end
+
+  factory :line_item do
+    item
+    cart
+  end
+
   factory :item do
     title 'Milk'
     description 'Slim Milk'
