@@ -31,6 +31,7 @@ end
 
 group :development, :test do
   gem 'awesome_print'
+  gem 'sandi_meter'
 end
 group :test do
   gem 'rspec-rails', '~> 3.0.1'
@@ -38,6 +39,9 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem "launchy"
+end
+group :test do
+  gem 'shoulda-matchers', require: false
 end
 gem 'bcrypt'
 group :test do
