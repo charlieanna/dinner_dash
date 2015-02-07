@@ -8,9 +8,15 @@ FactoryGirl.define do
   end
 
   factory :item do
-    title 'Milk'
-    description 'Slim Milk'
-    price 10.0
+    sequence :title do |n|
+      "title#{n}"
+    end
+    sequence :description do |n|
+      "description#{n}"
+    end
+    sequence :price do |n|
+      n + 1
+    end
     category
   end
 
@@ -24,5 +30,8 @@ FactoryGirl.define do
     end
   	password "aaaaaa"
   	name "ankur"
+    factory :admin_user do
+      admin true
+    end
   end
 end

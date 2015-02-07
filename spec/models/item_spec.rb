@@ -6,6 +6,8 @@ describe Item do
   it { should validate_presence_of(:price) }
   it { should belong_to(:category) }
   it { should have_db_index(:title) }
+  it { should have_attached_file(:photo) }
+  # it { should validate_attachment_presence(:photo) }
    it do
     should validate_numericality_of(:price).
       is_greater_than(0)

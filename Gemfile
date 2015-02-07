@@ -43,6 +43,7 @@ end
 group :test do
   gem 'shoulda-matchers', require: false
 end
+gem "paperclip", "~> 4.2"
 gem 'bcrypt'
 group :test do
   gem 'simplecov', '>=0.3.8', :require => false

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 	has_one :cart
 	validates :name, presence: true
   has_secure_password
-  validate :valid_email?
+  # validate :valid_email?
 
   def valid_email?
     begin

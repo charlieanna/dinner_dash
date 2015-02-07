@@ -1,0 +1,11 @@
+<ul class="items">
+	<% @items.each do |item| %>
+	  <li class="item" id="<%= item.id %>">
+		  <span class='title' id="<%= item.id %>"><%= item.title %></span>
+		  <span class='description'><%= item.description %></span>
+		  <span class='price'><%= item.price %></span>
+		  <span class='photo'><%= image_tag item.photo.url %></span>
+		  <span class='edit'><%= link_to "Edit", edit_item_path(item) %></span>
+		</li>
+	<% end %>
+<ul>>
