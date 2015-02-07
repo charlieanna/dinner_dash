@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'user signs in' do
 	scenario 'with email and password' do
     FactoryGirl.create(:user)
+    FactoryGirl.create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
     visit root_path
     click_link 'Login'
     fill_in 'email', with: "person@example.com"
@@ -24,6 +25,7 @@ feature 'user signs in' do
 
 	scenario 'can sign out' do
     FactoryGirl.create(:user)
+    FactoryGirl.create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
 	  visit root_path
     click_link 'Login'
     fill_in 'email', with: "person@example.com"
@@ -35,5 +37,15 @@ feature 'user signs in' do
 	end
 
   scenario 'does not clear the cart' do
+    user = FactoryGirl.create(:user)
+    FactoryGirl.create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    visit root_path
+    expect(page).to have_text 'You have 0 items in your cart'
+    within('ul.items li#1') do
+      click_button 'Add to Cart'
+    end
+    expect(page).to have_text 'You have 1 items in your cart'
+    sign_in_as user
+    expect(page).to have_text 'You have 1 items in your cart'
   end
 end

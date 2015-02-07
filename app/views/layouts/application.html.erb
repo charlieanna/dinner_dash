@@ -10,9 +10,10 @@
 	 <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
+  <%= "You have #{@cart.line_items.sum(:quantity)} items in your cart." %>
 <% if current_user %>
   <span class="current_user">Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %></span>
-  <%= "#{current_user.cart.line_items.sum(:quantity)} items " %><%= link_to "My Cart", current_user.cart %>
+  <%= link_to "My Cart", current_user.cart %>
 
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
