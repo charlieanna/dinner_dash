@@ -8,6 +8,7 @@ FactoryGirl.define do
   end
 
   factory :item do
+    state 'Open'
     sequence :title do |n|
       "title#{n}"
     end

@@ -26,6 +26,12 @@ class ItemsController < ApplicationController
 		redirect_to items_path, alert: "A new item has been created."
 	end
 
+	def archive
+		item = Item.find(params[:id])
+		item.update_attributes(state: "archived")
+		redirect_to items_path, alert: "Item has been archived"
+	end
+
 	private
 
 	def item_params

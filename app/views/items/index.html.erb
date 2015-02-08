@@ -6,6 +6,7 @@
 		  <span class='price'><%= item.price %></span>
 		  <span class='photo'><%= image_tag item.photo.url %></span>
 		  <span class='edit'><%= link_to "Edit", edit_item_path(item) %></span>
+		  <span class='archive'><%= link_to 'Archive', archive_item_path(item) %></span>
 		</li>
 	<% end %>
 <ul>>

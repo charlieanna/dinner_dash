@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208123751) do
+ActiveRecord::Schema.define(version: 20150208135839) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150208123751) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "state",              default: "open"
   end
 
   add_index "items", ["title"], name: "index_items_on_title"
