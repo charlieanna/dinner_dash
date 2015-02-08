@@ -3,6 +3,11 @@
 <ul>
   <% @cart.line_items.each do |line_item| %>
     <li><td><%= link_to line_item.quantity, edit_line_item_path(line_item) %></td> &times; <%= line_item.title %></li>
+     <%= number_to_currency(line_item.total_price) %>
     <td><%= link_to 'Remove', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 </ul>
+<%= number_to_currency(@cart.total_price) %>
+<%= button_to "Checkout", new_order_path, method: :get %>
+<%= button_to 'Empty cart', @cart, method: :delete,
+data: { confirm: 'Are you sure?' } %>

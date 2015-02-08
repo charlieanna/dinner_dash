@@ -7,10 +7,10 @@ feature 'user_can_increase_the_quantity_of_item' do
 		sign_in_as user
 		visit root_path
 		click_button 'Add to Cart'
-		expect(page).to have_text '1 × Milk'
+		expect(page).to have_text "1 × #{item.title}"
 		visit root_path
 		click_button 'Add to Cart'
-		expect(page).to have_text '2 × Milk'
+		expect(page).to have_text "2 × #{item.title}"
   end
 
   scenario 'by increasing the number of items' do
@@ -22,6 +22,6 @@ feature 'user_can_increase_the_quantity_of_item' do
 		click_link "1"
 	  fill_in "line_item_quantity", with: "3"
 		click_button "Update"
-		expect(page).to have_text '3 × Milk'
+		expect(page).to have_text "3 × #{item.title}"
  end
 end

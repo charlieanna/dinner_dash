@@ -1,0 +1,18 @@
+<%= form_for(@order) do |f| %>
+<% if @order.errors.any? %>
+<%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:
+
+<% @order.errors.full_messages.each do |msg| %>
+<%= msg %>
+<% end %>
+<% end %>
+<%= f.label :name %>
+<%= f.text_field :name, size: 40 %>
+<%= f.label :address %>
+<%= f.text_area :address, rows: 3, cols: 40 %>
+<%= f.label :email %>
+<%= f.email_field :email, size: 40 %>
+<%= f.label :pay_type %>
+<%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Select a payment method' %>
+<%= f.submit 'Place Order' %>
+<% end %>
