@@ -13,8 +13,11 @@ class ItemsController < ApplicationController
 	end
 
 	def update
+		categories = Category.where id: params[:item][:category_ids]
 		item = Item.find(params[:id])
     item.update_attributes(item_params)
+    item.categories = categories
+    item.save
     redirect_to items_path, alert: "Item has been updated"
 	end
 
