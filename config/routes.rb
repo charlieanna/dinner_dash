@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "homes#index"
 
-  resources :categories, only: [:show]
+  resources :categories, only: [:show, :new, :create, :index]
 
   # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'
@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :line_items, only: [:create, :destroy, :edit, :update]
   resources :cart, only: [:show]
   resources :items, only: [:index, :edit, :new, :update, :create]
+
 end
