@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
 	end
 
 	def update
-    item = Item.find(params[:id])
+		item = Item.find(params[:id])
     item.update_attributes(item_params)
     redirect_to items_path, alert: "Item has been updated"
 	end
@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
 	private
 
 	def item_params
-    params.require(:item).permit(:title, :description, :price, :photo)
+    params.require(:item).permit(:title, :description, :price, :photo, :category)
 	end
 
   def authorize_admin!

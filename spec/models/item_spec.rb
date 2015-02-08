@@ -4,7 +4,9 @@ describe Item do
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:description) }
   it { should validate_presence_of(:price) }
-  it { should belong_to(:category) }
+  it { should validate_presence_of(:categories) }
+  it { should have_and_belong_to_many(:categories) }
+
   it { should have_db_index(:title) }
   it { should have_attached_file(:photo) }
   # it { should validate_attachment_presence(:photo) }

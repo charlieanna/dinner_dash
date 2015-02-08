@@ -34,11 +34,13 @@ feature 'unauthenticated user views home page' do
   end
 
   scenario 'can click on a category and view the items' do
-    category = FactoryGirl.create(:category, title: "Kitchen")
-    item1 = FactoryGirl.create(:item, title: 'Plate', category: category)
-    item2 = FactoryGirl.create(:item, title: 'Kadaai', category: category)
+    category = FactoryGirl.create(:category, title: "Bathroom")
+    item1 = FactoryGirl.create(:item, title: 'Plate')
+    category.items << item1
+    item2 = FactoryGirl.create(:item, title: 'Kadaai')
+    category.items << item2
     visit root_path
-    click_link 'Kitchen'
+    click_link 'Bathroom'
     expect(page).to have_css 'ul.items li.title', text: 'Plate'
     expect(page).to have_css 'ul.items li.title', text: 'Kadaai'
   end

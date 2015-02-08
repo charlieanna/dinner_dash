@@ -48,3 +48,4 @@ gem 'bcrypt'
 group :test do
   gem 'simplecov', '>=0.3.8', :require => false
 end
+gem 'simple_form'

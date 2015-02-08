@@ -57,7 +57,9 @@ feature 'As an admin when I visit the items page' do
   end
 
   scenario "I can create new items" do
+    #category is already selected by default
     admin = create(:admin_user)
+    category = create(:category)
     sign_in_as admin
     visit new_item_path
     fill_in "Title", with: "Title"

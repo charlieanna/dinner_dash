@@ -17,6 +17,5 @@ feature 'User checkouts his cart' do
 		select 'Check', from: 'order_pay_type'
 		click_button 'Place Order'
 		expect(page).to have_text 'Thank you for your order'
-
 	end
 end
