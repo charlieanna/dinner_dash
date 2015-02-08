@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
   PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
+  STATUS_TYPES = ["completed", "ordered", "cancelled"]
   has_many :line_items, dependent: :destroy
   belongs_to :user
   validates :name, :address, :email, presence: true
