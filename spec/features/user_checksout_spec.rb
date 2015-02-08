@@ -2,10 +2,10 @@ require 'rails_helper'
 
 feature 'User checkouts his cart' do
 	scenario 'the cart status changes to ordered' do
-    user = FactoryGirl.create(:user)
-		item = FactoryGirl.create(:item)
-		cart = FactoryGirl.create(:cart, user: user)
-		line_item = FactoryGirl.create(:line_item, cart: cart, item: item)
+    user = create(:user)
+		item = create(:item)
+		cart = create(:cart, user: user)
+		line_item = create(:line_item, cart: cart, item: item)
 		sign_in_as user
 		visit root_path
 		click_button 'Add to Cart'

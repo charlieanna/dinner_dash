@@ -1,0 +1,4 @@
+<% @orders.each do |order| %>
+  <%= link_to order.name, order %>
+  <%= order.user.email %>
+<% end %>

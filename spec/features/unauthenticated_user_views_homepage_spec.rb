@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'unauthenticated user views home page' do
   scenario "can browse all items" do
-    FactoryGirl.create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
-    FactoryGirl.create(:item, title:  'Interstate Mac and Cheese', description: 'Goat Cheese', price: 20.0)
+    create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    create(:item, title:  'Interstate Mac and Cheese', description: 'Goat Cheese', price: 20.0)
     visit root_path
     within('ul.items') do
       within('li#1') do
@@ -26,18 +26,18 @@ feature 'unauthenticated user views home page' do
   end
 
   scenario 'can see all the categories' do
-    FactoryGirl.create(:category, title: "Kitchen")
-    FactoryGirl.create(:category, title: "Men")
+    create(:category, title: "Kitchen")
+    create(:category, title: "Men")
     visit root_path
     expect(page).to have_link 'Kitchen'
     expect(page).to have_link 'Men'
   end
 
   scenario 'can click on a category and view the items' do
-    category = FactoryGirl.create(:category, title: "Bathroom")
-    item1 = FactoryGirl.create(:item, title: 'Plate')
+    category = create(:category, title: "Bathroom")
+    item1 = create(:item, title: 'Plate')
     category.items << item1
-    item2 = FactoryGirl.create(:item, title: 'Kadaai')
+    item2 = create(:item, title: 'Kadaai')
     category.items << item2
     visit root_path
     click_link 'Bathroom'
@@ -46,7 +46,7 @@ feature 'unauthenticated user views home page' do
   end
 
   scenario 'can add an item to his cart' do
-    FactoryGirl.create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
     visit root_path
     within('ul.items li#1') do
       click_button 'Add to Cart'
@@ -59,8 +59,8 @@ feature 'unauthenticated user views home page' do
   end
 
   scenario "cannot View another user’s private data (such as current order, etc.)" do
-    FactoryGirl.create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
-    user1 = FactoryGirl.create(:user)
+    create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    user1 = create(:user)
     sign_in_as user1
     within('ul.items li#1') do
       click_button 'Add to Cart'
@@ -68,7 +68,7 @@ feature 'unauthenticated user views home page' do
     click_link 'Logout'
     click_link "My Cart"
     expect(page).to have_text 'You have 0 items in your cart'
-    user2 = FactoryGirl.create(:user)
+    user2 = create(:user)
     sign_in_as user2
     within('ul.items li#1') do
       click_button 'Add to Cart'

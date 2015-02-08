@@ -17,7 +17,7 @@ FactoryGirl.define do
     sequence :price do |n|
       n + 1
     end
-    categories {[FactoryGirl.create(:category)]}
+    categories {[create(:category)]}
   end
 
   factory :category do

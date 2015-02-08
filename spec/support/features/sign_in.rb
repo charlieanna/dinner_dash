@@ -1,6 +1,6 @@
 module Feature
   def sign_in
-    user = FactoryGirl.create(:user)
+    user = create(:user)
     sign_in_as user
   end
 

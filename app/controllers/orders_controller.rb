@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 	end
 
 	def create
-    @order = Order.create(order_params)
+    @order = current_user.orders.create(order_params)
     @order.add_line_items_from_cart(@cart)
 
     respond_to do |format|
@@ -25,6 +25,14 @@ class OrdersController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @order.errors,
           status: :unprocessable_entity }
+      end
+    end
+
+    def index
+      if current_user.admin?
+        @orders = Order.all
+      else
+        @orders = current_user.orders
       end
     end
   end

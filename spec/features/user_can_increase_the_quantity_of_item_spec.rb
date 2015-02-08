@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'user_can_increase_the_quantity_of_item' do
   scenario 'by increasing it by clicking on add to cart' do
-  	user = FactoryGirl.create(:user)
-  	item = FactoryGirl.create(:item)
+  	user = create(:user)
+  	item = create(:item)
 		sign_in_as user
 		visit root_path
 		click_button 'Add to Cart'
@@ -14,8 +14,8 @@ feature 'user_can_increase_the_quantity_of_item' do
   end
 
   scenario 'by increasing the number of items' do
-  	user = FactoryGirl.create(:user)
-  	item = FactoryGirl.create(:item)
+  	user = create(:user)
+  	item = create(:item)
 		sign_in_as user
 		visit root_path
 		click_button 'Add to Cart'
