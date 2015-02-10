@@ -27,13 +27,13 @@ class OrdersController < ApplicationController
           status: :unprocessable_entity }
       end
     end
+  end
 
-    def index
-      if current_user.admin?
-        @orders = Order.all
-      else
-        @orders = current_user.orders
-      end
+  def index
+    if current_user.admin?
+      @orders = Order.all
+    else
+      @orders = current_user.orders
     end
   end
 

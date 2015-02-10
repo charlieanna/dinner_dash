@@ -1,10 +1,11 @@
 FactoryGirl.define do
-  factory :cart do
+ 
+  factory :category do
+    title 'Kitchen'
   end
 
   factory :line_item do
     item
-    cart
   end
 
   factory :item do
@@ -21,8 +22,13 @@ FactoryGirl.define do
     categories {[create(:category)]}
   end
 
-  factory :category do
-    title 'Kitchen'
+  factory :order do
+    user
+    name "Ankur Kothari"
+    email "ankothari@gmail.com"
+    address "Bangalore"
+    pay_type "Check"
+    status 'ordered'
   end
 
   factory :user do
