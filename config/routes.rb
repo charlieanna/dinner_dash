@@ -18,5 +18,9 @@ Rails.application.routes.draw do
       get :archive
     end
   end
-  resources :orders, only: [:new, :create, :index, :show]
+  resources :orders, only: [:new, :create, :index, :show] do
+    member do
+      get :cancel
+    end
+  end
 end

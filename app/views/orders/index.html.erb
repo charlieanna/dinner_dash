@@ -2,4 +2,7 @@
   <%= link_to order.name, order %>
   <%= order.user.email %>
   <%= order.status %>
+  <% if order.status == "paid" || order.status == 'ordered' %>
+    <%= link_to 'Cancel', cancel_order_path(order) %>
+  <% end %>
 <% end %>

@@ -8,6 +8,9 @@ FactoryGirl.define do
     item
   end
 
+  factory :cart do
+  end
+
   factory :item do
     state 'Open'
     sequence :title do |n|
