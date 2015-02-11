@@ -1,9 +1,10 @@
 <ul class='reviews'><h1> Reviews </h1>
-  <li>
-		<% @reviews.each do |review| %>
-		  <%= review.title %>
-		  <%= review.body %>
-		  <%= review.stars %>
-		<% end %>
-  </li>
+  <% @reviews.each do |review| %>
+		<li id="<%=review.id %>">
+		  <span class='reviewer'>Reviewed by <%= review.user.name %></span>
+		  <span class='title'><%= review.title %></span>
+		  <span class='body'><%= review.body %></span>
+		  <span class='stars'>Stars: <%= review.stars %></span>
+		</li>
+	<% end %>
 </ul>

@@ -38,6 +38,18 @@ FactoryGirl.define do
     status 'ordered'
   end
 
+  factory :review do
+    user
+    item
+    sequence :title do |n|
+      "title#{n}"
+    end
+    sequence :body do |n|
+      "body#{n}"
+    end
+    stars 0
+  end
+
   factory :user do
     sequence :email do |n|
       "person#{n}@example.com"

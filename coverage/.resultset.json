@@ -13,6 +13,42 @@
         null,
         null
       ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/review.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
       "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/item.rb": [
         1,
         1,
@@ -94,12 +130,8 @@
         1,
         null,
         null
-      ],
-      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/review.rb": [
-        1,
-        null
       ]
     },
-    "timestamp": 1423675780
+    "timestamp": 1423677388
   }
 }
