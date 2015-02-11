@@ -29,6 +29,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  def filter
+    @orders = Order.where(status: params[:status])
+    render 'index'
+  end
+
   def index
     if current_user.admin?
       @orders = Order.all

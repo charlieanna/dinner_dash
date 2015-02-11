@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   resources :orders, only: [:new, :create, :index, :show] do
     member do
       get :cancel
+
+    end
+    collection do
+      get :filter
     end
   end
 end
