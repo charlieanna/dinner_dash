@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def create
     @order = current_user.orders.create(order_params)
     @order.add_line_items_from_cart(@cart)

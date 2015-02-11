@@ -12,6 +12,7 @@
     <%= link_to 'Cancel', cancel_order_path(order) %>
   <% end %>
   <%= order.created_at.strftime("%B %d %Y at %I:%M %p") %></li>
+  created by <%= order.user.name %> <%= order.email %></li>
 <% end %>
 </li>
 </ul>
