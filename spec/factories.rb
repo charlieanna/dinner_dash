@@ -5,6 +5,9 @@ FactoryGirl.define do
   end
 
   factory :line_item do
+    sequence :quantity do |n|
+      n
+    end
     item
   end
 
@@ -22,6 +25,7 @@ FactoryGirl.define do
     sequence :price do |n|
       n + 1
     end
+    
     categories {[create(:category)]}
   end
 

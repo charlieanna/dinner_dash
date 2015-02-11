@@ -11,4 +11,12 @@ class Order < ActiveRecord::Base
       line_items << item
     end
   end
+
+  def total_amount
+    sum = 0
+    line_items.each do |line_item| 
+      sum += line_item.quantity
+    end
+    sum
+  end
 end
