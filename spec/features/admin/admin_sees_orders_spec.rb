@@ -43,7 +43,16 @@ feature 'Admin sees orders' do
     expect(page).not_to have_link 'Cancel'
 	end
 
-	# scenario 'can see a particular order by clicking on their link'
+	 scenario 'can see a particular order by clicking on their link' do
+	 	order = create(:order, status: "ordered")
+    
+    admin = create(:admin_user)
+    sign_in_as admin
+    visit orders_path
+    within 'ul'  do
+      expect(page).to have_text order.created_at.strftime("%B %d %Y at %I:%M %p")
+    end
+	 end
 	# scenario 'filter orders to display by status type (for statuses "ordered", "paid", "cancelled", "completed")'
 
 	# context 'link to transition to a different status:' do
