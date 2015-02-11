@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-	before_action :authorize_admin!
+	# before_action :authorize_admin!
 	def index
 		@items = Item.all
 	end
@@ -23,7 +23,15 @@ class ItemsController < ApplicationController
 
 	def create
 		item = Item.create(item_params)
-		redirect_to items_path, alert: "A new item has been created."
+		categories = Category.where id: params[:item][:category_ids]
+		item.update_attributes(item_params)
+    item.categories = categories
+    item.save
+		if item 
+			redirect_to items_path, alert: "A new item has been created."
+		else
+			redirect_to root_path, alert: item.errors
+		end
 	end
 
 	def archive
@@ -35,7 +43,7 @@ class ItemsController < ApplicationController
 	private
 
 	def item_params
-    params.require(:item).permit(:title, :description, :price, :photo, :category)
+    params.require(:item).permit(:title, :description, :price, :photo, :category_ids)
 	end
 
   def authorize_admin!

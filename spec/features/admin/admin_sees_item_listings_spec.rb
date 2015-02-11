@@ -66,8 +66,11 @@ feature 'As an admin when I visit the items page' do
     fill_in "Title", with: "Title"
     fill_in "Description",with: "description"
     fill_in "Price", with: "10"
+    check 'Kitchen'
+    
     page.attach_file('Photo', 'app/assets/images/ic_launcher.png')
     click_button "Create"
     expect(page).to have_text "A new item has been created."
+    expect(page).to have_text 'Title'
   end
 end

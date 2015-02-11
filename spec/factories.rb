@@ -22,7 +22,7 @@ FactoryGirl.define do
     sequence :description do |n|
       "description#{n}"
     end
-    sequence :price do |n|
+    sequence(:price,0) do |n|
       n + 1
     end
     
