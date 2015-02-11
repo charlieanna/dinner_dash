@@ -24,6 +24,8 @@
         1,
         1,
         1,
+        null,
+        1,
         null
       ],
       "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/category.rb": [
@@ -89,10 +91,15 @@
       "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/reviews_controller.rb": [
         1,
         1,
+        1,
         null,
+        null
+      ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/review.rb": [
+        1,
         null
       ]
     },
-    "timestamp": 1423673873
+    "timestamp": 1423675780
   }
 }

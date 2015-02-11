@@ -1,5 +1,9 @@
-<% @reviews.each do |review| %>
-  <%= review.title %>
-  <%= review.body %>
-  <%= review.stars %>
-<% end %>
+<ul class='reviews'><h1> Reviews </h1>
+  <li>
+		<% @reviews.each do |review| %>
+		  <%= review.title %>
+		  <%= review.body %>
+		  <%= review.stars %>
+		<% end %>
+  </li>
+</ul>
