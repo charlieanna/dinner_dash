@@ -1,13 +1,13 @@
 require 'open-uri'
 
-plates = Category.create(name: "Plates")
-snacks = Category.create(name: "Snacks")
-desserts = Category.create(name: "Dessert")
-soups = Category.create(name: "Soups")
-salads = Category.create(name: "Salads")
-sandwiches = Category.create(name: "Sandwiches")
-burgers = Category.create(name: "Burgers")
-brunch = Category.create(name: "Brunch")
+plates = Category.create(title: "Plates")
+snacks = Category.create(title: "Snacks")
+desserts = Category.create(title: "Dessert")
+soups = Category.create(title: "Soups")
+salads = Category.create(title: "Salads")
+sandwiches = Category.create(title: "Sandwiches")
+burgers = Category.create(title: "Burgers")
+brunch = Category.create(title: "Brunch")
 
 deviled_eggs = Item.new(title: "Deviled Eggs", description: "12 delicious deviled eggs", price: '5')
 deviled_eggs.image = open("https://platable.s3.amazonaws.com/items/images/000/000/001/small/deviled_eggs.jpg")
