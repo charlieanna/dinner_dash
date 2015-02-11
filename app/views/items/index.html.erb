@@ -8,6 +8,7 @@
 		  <span class='photo'><%= image_tag item.photo.url %></span>
 		  <span class='edit'><%= link_to "Edit", edit_item_path(item) %></span>
 		  <span class='archive'><%= link_to 'Archive', archive_item_path(item) %></span>
+		  <span class='reviews'><%= link_to 'Reviews',item_reviews_path %></span>
 		</li>
 	<% end %>
 <ul>

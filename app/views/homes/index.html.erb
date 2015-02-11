@@ -10,6 +10,7 @@
 		  <span class='description'><%= item.description %></span>
 		  <span class='price'><%= item.price %></span>
 		  <span class='buy_button'><%= button_to "Add to Cart", line_items_path(item_id: item) %></span>
+		  <span class='reviews'><%= link_to 'Reviews',item_reviews_path(item) %></span>
 		</li>
 	<% end %>
 <ul>
