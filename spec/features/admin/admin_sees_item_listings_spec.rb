@@ -61,7 +61,8 @@ feature 'As an admin when I visit the items page' do
     admin = create(:admin_user)
     category = create(:category)
     sign_in_as admin
-    visit new_item_path
+    visit items_path
+    click_link "New"
     fill_in "Title", with: "Title"
     fill_in "Description",with: "description"
     fill_in "Price", with: "10"

@@ -1,3 +1,4 @@
+<%= link_to "New", new_item_path %>
 <ul class="items">
 	<% @items.each do |item| %>
 	  <li class="item" id="<%= item.id %>">
@@ -9,4 +10,4 @@
 		  <span class='archive'><%= link_to 'Archive', archive_item_path(item) %></span>
 		</li>
 	<% end %>
-<ul>>
+<ul>

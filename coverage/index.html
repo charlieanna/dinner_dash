@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-11T16:07:41+05:30">2015-02-11T16:07:41+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-11T16:31:19+05:30">2015-02-11T16:31:19+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         7.44
+         7.49
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>11</td>
         <td>10</td>
         <td>1</td>
-        <td>25.8</td>
+        <td>26.3</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>79.7</td>
+        <td>80.0</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>30</td>
         <td>28</td>
         <td>2</td>
-        <td>2.3</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
@@ -243,7 +243,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         9.73
+         9.8
        </span>
     </span> hits/line)
   </h2>
@@ -275,7 +275,7 @@
         <td>11</td>
         <td>10</td>
         <td>1</td>
-        <td>25.8</td>
+        <td>26.3</td>
       </tr>
       
       <tr>
@@ -305,7 +305,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>79.7</td>
+        <td>80.0</td>
       </tr>
       
       <tr>
@@ -325,7 +325,7 @@
         <td>30</td>
         <td>28</td>
         <td>2</td>
-        <td>2.3</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
@@ -685,8 +685,8 @@
           <code class="ruby">  def require_signin!</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="11">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="11">
+          <span class="hits">15</span>
           
           <code class="ruby">    unless current_user</code>
         </li>
@@ -715,8 +715,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="262" data-linenumber="16">
-          <span class="hits">262</span>
+        <li class="covered" data-hits="266" data-linenumber="16">
+          <span class="hits">266</span>
           
           <code class="ruby">    @current_user ||= User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -1009,20 +1009,20 @@
           <code class="ruby">  def set_cart</code>
         </li>
       
-        <li class="covered" data-hits="215" data-linenumber="7">
-          <span class="hits">215</span>
+        <li class="covered" data-hits="216" data-linenumber="7">
+          <span class="hits">216</span>
           
           <code class="ruby">	  @cart = Cart.find_or_initialize_by(id: session[:cart_id])</code>
         </li>
       
-        <li class="covered" data-hits="215" data-linenumber="8">
-          <span class="hits">215</span>
+        <li class="covered" data-hits="216" data-linenumber="8">
+          <span class="hits">216</span>
           
           <code class="ruby">	  @cart.user_id = session[:user_id] if session[:user_id]</code>
         </li>
       
-        <li class="covered" data-hits="215" data-linenumber="9">
-          <span class="hits">215</span>
+        <li class="covered" data-hits="216" data-linenumber="9">
+          <span class="hits">216</span>
           
           <code class="ruby">	  if @cart.new_record?</code>
         </li>
@@ -1147,8 +1147,8 @@
           <code class="ruby">	def index</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="4">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="4">
+          <span class="hits">8</span>
           
           <code class="ruby">		@items = Item.all</code>
         </li>
@@ -1375,14 +1375,14 @@
           <code class="ruby">  def authorize_admin!</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="42">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="42">
+          <span class="hits">15</span>
           
           <code class="ruby">    require_signin!</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="43">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="43">
+          <span class="hits">15</span>
           
           <code class="ruby">    unless current_user.admin?</code>
         </li>
