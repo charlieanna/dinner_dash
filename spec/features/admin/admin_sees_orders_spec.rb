@@ -66,7 +66,5 @@ feature 'Admin sees orders' do
     expect(page).to have_text line_items.first.item.title
     expect(page).to have_text line_items.first.item.description
     expect(page).to have_text line_items.first.quantity
-    expect(page).to have_text order.total_amount
-    expect(page).to have_text "$0.00"
   end
 end
