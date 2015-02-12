@@ -1,5 +1,5 @@
 FactoryGirl.define do
- 
+
   factory :category do
     title 'Kitchen'
   end
@@ -25,7 +25,7 @@ FactoryGirl.define do
     sequence(:price,0) do |n|
       n + 1
     end
-    
+
     categories {[create(:category)]}
   end
 

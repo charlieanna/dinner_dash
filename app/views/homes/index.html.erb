@@ -1,4 +1,4 @@
-<%= render 'search/search_form'%> 
+<%= render 'search/search_form'%>
 <ul class="categories">
 	<% @categories.each do |category| %>
 	  <%= link_to category.title, category %>
@@ -12,9 +12,8 @@
 		  <span class='price'><%= item.price %></span>
 		  <span class='buy_button'><%= button_to "Add to Cart", line_items_path(item_id: item) %></span>
 		  <span class='reviews'><%= link_to 'Reviews',item_reviews_path(item) %></span>
-		 
-      <% if bought_by item, current_user %>
-		    <span class='write_review'><%= link_to 'Write a review',new_item_review_path(item) %></span>
+		  <% if bought_by item, current_user %>
+        <span class='write_review'><%= link_to 'Write a review',new_item_review_path(item) %></span>
       <% end %>
 		</li>
 	<% end %>

@@ -1,3 +1,4 @@
+<%= render 'search/order_search_form'%>
 <%= form_for :order, url: filter_orders_path, method: 'get' do |f| %>
   <%= select_tag "status", options_for_select([ "paid", "cancelled", 'ordered', 'completed' ], "MasterCard") %>
   <%= submit_tag "Filter" %>
