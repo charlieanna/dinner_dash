@@ -56,8 +56,10 @@ group :test do
   gem 'spork', '0.9.2'
    gem 'rb-fsevent', '0.9.1', :require => false
   gem 'growl', '1.0.3'
+  gem 'rspec-legacy_formatters'
 end
 gem 'simple_form'
 gem  'pg'
 gem 'twitter-bootstrap-rails'
 gem 'time_diff'
+gem 'pg_search'
