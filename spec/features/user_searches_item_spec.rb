@@ -21,10 +21,9 @@ feature 'user searches for item' do
     order.line_items << line_items
     sign_in_as order.user
     visit orders_path
-    
-    fill_in 'Search',with: "title1"
+    fill_in 'Search',with: line_items.first.item.title
     click_button 'Search'
-    
+    save_and_open_page
     expect(page).to have_css  ".item .title", text: "title1"
     expect(page).to have_css  ".item .description", text: "description1"
     expect(page).to have_css  ".item .price",text: "1"
