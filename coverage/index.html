@@ -14,26 +14,26 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-12T22:21:59+05:30">2015-02-12T22:21:59+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-12T22:24:45+05:30">2015-02-12T22:24:45+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">85.61%</span></span>
+    (<span class="covered_percent"><span class="yellow">85.51%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.94
+         6.99
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>285</b> relevant lines. 
-    <span class="green"><b>244</b> lines covered</span> and
+    <b>283</b> relevant lines. 
+    <span class="green"><b>242</b> lines covered</span> and
     <span class="red"><b>41</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -143,11 +143,11 @@
       <tr>
         <td class="strong"><a href="#d9982d12d0850cf7f5916d523d7f93c94c12714e" class="src_link" title="app/controllers/searches_controller.rb">app/controllers/searches_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>16</td>
-        <td>12</td>
-        <td>12</td>
+        <td>14</td>
+        <td>10</td>
+        <td>10</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -279,19 +279,19 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="green">92.04%</span></span>
+    (<span class="covered_percent"><span class="green">91.96%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         9.16
+         9.24
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>12</b> files in total.
-    <b>201</b> relevant lines. 
-    <span class="green"><b>185</b> lines covered</span> and
+    <b>199</b> relevant lines. 
+    <span class="green"><b>183</b> lines covered</span> and
     <span class="red"><b>16</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -401,11 +401,11 @@
       <tr>
         <td class="strong"><a href="#d9982d12d0850cf7f5916d523d7f93c94c12714e" class="src_link" title="app/controllers/searches_controller.rb">app/controllers/searches_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>16</td>
-        <td>12</td>
-        <td>12</td>
+        <td>14</td>
+        <td>10</td>
+        <td>10</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -2496,8 +2496,8 @@
     <h3>app/controllers/searches_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2550,52 +2550,40 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">		  ap Item.where(id: ids)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
           <code class="ruby">		  @items = Item.where(id: ids).search_by_full_text(params[:search][:search])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
-          
-          <code class="ruby">		  ap @items</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">		else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">			@items = Item.search_by_full_text(params[:search][:search])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">		end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
+        <li class="covered" data-hits="2" data-linenumber="12">
           <span class="hits">2</span>
           
           <code class="ruby">		render &#39;show&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>

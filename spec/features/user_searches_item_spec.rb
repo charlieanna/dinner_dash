@@ -23,10 +23,13 @@ feature 'user searches for item' do
     visit orders_path
     fill_in 'Search',with: line_items.first.item.title
     click_button 'Search'
-    save_and_open_page
-    expect(page).to have_css  ".item .title", text: "title1"
-    expect(page).to have_css  ".item .description", text: "description1"
-    expect(page).to have_css  ".item .price",text: "1"
+    expect(page).to have_css  ".item .title", text: line_items.first.item.title
+    expect(page).to have_css  ".item .description", text: line_items.first.item.description
+    expect(page).to have_css  ".item .price",text: line_items.first.item.price
+
+    expect(page).not_to have_css  ".item .title", text: line_items[1].item.title
+    expect(page).not_to have_css  ".item .description", text: line_items[1].item.description
+    expect(page).not_to have_css  ".item .price",text: line_items[1].item.price
 
     expect(page).not_to have_text 'Dairy'
   end
