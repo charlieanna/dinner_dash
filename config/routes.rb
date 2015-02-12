@@ -28,6 +28,6 @@ Rails.application.routes.draw do
       get :filter
     end
   end
-
+    resource :search
   
 end
