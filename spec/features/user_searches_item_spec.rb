@@ -7,9 +7,9 @@ feature 'user searches for item' do
 		visit root_path
 		fill_in 'Search',with: 'Dairy'
 		click_button 'Search'
-		expect(page).to have_css  "ul.results li##{item.id}.item .title', text: 'Dairy"
-		expect(page).to have_css  "ul.results li##{item.id}.item .description', text: 'Office dairy"
-		expect(page).to have_css  "ul.results li##{item.id}.item .price',text: '1"
+		expect(page).to have_css  "ul.results li##{item.id}.item .title", text: "Dairy"
+		expect(page).to have_css  "ul.results li##{item.id}.item .description", text: "Office dairy"
+		expect(page).to have_css  "ul.results li##{item.id}.item .price",text: "1"
 
 		expect(page).not_to have_text 'Toilet paper'
 	end 

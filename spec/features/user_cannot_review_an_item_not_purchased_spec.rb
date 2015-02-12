@@ -11,7 +11,6 @@ feature 'user cannot review an unpurchased item' do
 	scenario 'Signed user cannot write a review to an item which he not yet been completed' do
 		user = create(:user)
     order = create(:order, user: user, status: 'paid')
-    ap user.orders
     line_items = create_list(:line_item, 1)
     order.line_items << line_items
     sign_in_as user
