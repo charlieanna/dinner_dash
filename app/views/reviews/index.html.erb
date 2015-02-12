@@ -1,6 +1,6 @@
 <ul class='reviews'><h1> Reviews </h1>
   <% @reviews.each do |review| %>
-		<li id="<%=review.id %>">
+		<li class='review' id="<%=review.id %>">
 		  <span class='reviewer'>Reviewed by <%= review.user.name %></span>
 		  <span class='title'><%= review.title %></span>
 		  <span class='body'><%= review.body %></span>
