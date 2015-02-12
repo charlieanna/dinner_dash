@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 group :development do
 	gem "rails_best_practices"
+  gem 'hold_please'
+  gem 'do_not_want'
 end
 
 group :development, :test do

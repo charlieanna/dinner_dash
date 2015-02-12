@@ -57,6 +57,7 @@ GEM
     colored (1.2)
     database_cleaner (1.4.0)
     diff-lcs (1.2.5)
+    do_not_want (0.0.1)
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.3.0)
@@ -82,6 +83,8 @@ GEM
       spork (>= 0.8.4)
       sys-proctable
     hike (1.2.3)
+    hold_please (0.0.2)
+      activerecord (>= 3)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -246,10 +249,12 @@ DEPENDENCIES
   childprocess (= 0.3.6)
   coffee-rails (~> 4.0.0)
   database_cleaner
+  do_not_want
   factory_girl_rails
   growl (= 1.0.3)
   guard-rspec (= 1.2.1)
   guard-spork (= 1.2.0)
+  hold_please
   jbuilder (~> 2.0)
   jquery-rails
   launchy
