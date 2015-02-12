@@ -2,11 +2,11 @@ require 'rails_helper'
 
 feature 'unauthenticated user views home page' do
   scenario "can browse all items" do
-    create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
-    create(:item, title:  'Interstate Mac and Cheese', description: 'Goat Cheese', price: 20.0)
+    item1 = create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    item2 = create(:item, title:  'Interstate Mac and Cheese', description: 'Goat Cheese', price: 20.0)
     visit root_path
     within('ul.items') do
-      within('li#1') do
+      within("li##{item1.id}") do
         expect(page).to have_css 'span.title', text: 'Deviled Eggs'
         expect(page).to have_css 'span.description', text: 'Eggs from Chicken'
         expect(page).to have_css 'span.price', text: '10.0'
@@ -14,7 +14,7 @@ feature 'unauthenticated user views home page' do
           expect(page).to have_button 'Add to Cart'
         end
       end
-      within('li#2') do
+      within("li##{item2.id}") do
         expect(page).to have_css 'span.title', text: 'Interstate Mac and Cheese'
         expect(page).to have_css 'span.description', text: 'Goat Cheese'
         expect(page).to have_css 'span.price', text: '20.0'
@@ -46,9 +46,9 @@ feature 'unauthenticated user views home page' do
   end
 
   scenario 'can add an item to his cart' do
-    create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    item = create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
     visit root_path
-    within('ul.items li#1') do
+    within("li##{item.id}") do
       click_button 'Add to Cart'
     end
     expect(page).to have_text 'Line item was successfully created.'
@@ -59,10 +59,10 @@ feature 'unauthenticated user views home page' do
   end
 
   scenario "cannot View another user’s private data (such as current order, etc.)" do
-    create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    item = create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
     user1 = create(:user)
     sign_in_as user1
-    within('ul.items li#1') do
+    within("li##{item.id}") do
       click_button 'Add to Cart'
     end
     click_link 'Logout'
@@ -70,7 +70,7 @@ feature 'unauthenticated user views home page' do
     expect(page).to have_text 'You have 0 items in your cart'
     user2 = create(:user)
     sign_in_as user2
-    within('ul.items li#1') do
+    within("li##{item.id}") do
       click_button 'Add to Cart'
     end
     click_link "My Cart"
