@@ -5,9 +5,9 @@
 		  <span class='title'><%= review.title %></span>
 		  <span class='body'><%= review.body %></span>
 		  <span class='stars'>Stars: <%= review.stars %></span>
-		  <%= Time.now %>
-		  <%=  Time.diff(Time.now, review.created_at) %>
-		 
+			<% if Time.diff(Time.now, review.created_at)[:minute] <= 15 %>
+		    <%= link_to "Edit review", edit_item_review_path(review.item, review) %>
+		  <% end %>
 		</li>
 	<% end %>
 </ul>

@@ -16,6 +16,16 @@ class ReviewsController < ApplicationController
   	redirect_to item_reviews_path(item)
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @review.update_attributes(review_params)
+    redirect_to item_reviews_path, alert: "Review has been updated"
+  end
+
   private
 
   def review_params

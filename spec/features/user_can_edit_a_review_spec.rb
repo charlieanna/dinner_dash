@@ -12,15 +12,11 @@ feature 'user edits a review' do
     fill_in 'Body', with: "Body"
     fill_in 'Stars',with: 3
     click_button 'Submit'
-    ap Time.now
-    Timecop.travel(Time.now + 15*60)
-    ap Time.now
-	  save_and_open_page
     click_link 'Edit review'
     fill_in 'Title', with: "Title"
     fill_in 'Body', with: "Body"
     fill_in 'Stars',with: 3
-    click_button 'Submit'
+    click_button 'Update'
     expect(page).to have_css 'ul.reviews li#1.review .body', text: 'Body'
     expect(page).to have_css 'ul.reviews li#1.review .title', text: 'Title'
     expect(page).to have_css 'ul.reviews li#1.review .stars', text: '3'
