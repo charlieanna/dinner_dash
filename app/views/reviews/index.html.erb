@@ -5,6 +5,9 @@
 		  <span class='title'><%= review.title %></span>
 		  <span class='body'><%= review.body %></span>
 		  <span class='stars'>Stars: <%= review.stars %></span>
+		  <%= Time.now %>
+		  <%=  Time.diff(Time.now, review.created_at) %>
+		 
 		</li>
 	<% end %>
 </ul>

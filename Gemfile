@@ -41,6 +41,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem "launchy"
+  gem 'timecop'
 end
 group :test do
   gem 'shoulda-matchers', require: false
@@ -53,3 +54,4 @@ end
 gem 'simple_form'
 gem  'pg'
 gem 'twitter-bootstrap-rails'
+gem 'time_diff'
