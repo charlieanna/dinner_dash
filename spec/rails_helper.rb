@@ -28,6 +28,7 @@ Spork.prefork do
   ActiveRecord::Migration.maintain_test_schema!
 
   RSpec.configure do |config|
+    Capybara.javascript_driver = :poltergeist
     config.include FactoryGirl::Syntax::Methods
     config.include Feature, type: :feature
     config.use_transactional_fixtures = false
