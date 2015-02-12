@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
 	include PgSearch
-	pg_search_scope :search_by_title, :against => :title
+	pg_search_scope :search_by_full_text, :against => [:title, :description]
 	validates :title, presence: true
 	validates :description, presence: true
 	validates :price, presence: true
