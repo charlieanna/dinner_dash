@@ -31,6 +31,8 @@ group :development do
 	gem "rails_best_practices"
   gem 'hold_please'
   gem 'do_not_want'
+  gem 'rack-mini-profiler'
+  gem "bullet"
 end
 
 group :development, :test do
