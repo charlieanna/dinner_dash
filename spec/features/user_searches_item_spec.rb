@@ -21,12 +21,13 @@ feature 'user searches for item' do
     order.line_items << line_items
     sign_in_as order.user
     visit orders_path
-    save_and_open_page
-    fill_in 'search',with: "title1"
+    
+    fill_in 'Search',with: "title1"
     click_button 'Search'
-    expect(page).to have_css  "ul.results li##{item.id}.item .title", text: "Dairy"
-    expect(page).to have_css  "ul.results li##{item.id}.item .description", text: "Office dairy"
-    expect(page).to have_css  "ul.results li##{item.id}.item .price",text: "1"
+    
+    expect(page).to have_css  ".item .title", text: "title1"
+    expect(page).to have_css  ".item .description", text: "description1"
+    expect(page).to have_css  ".item .price",text: "1"
 
     expect(page).not_to have_text 'Dairy'
   end
