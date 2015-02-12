@@ -17,8 +17,8 @@ feature 'user edits a review' do
     fill_in 'Body', with: "Body"
     fill_in 'Stars',with: 3
     click_button 'Update'
-    expect(page).to have_css 'ul.reviews li#1.review .body', text: 'Body'
-    expect(page).to have_css 'ul.reviews li#1.review .title', text: 'Title'
-    expect(page).to have_css 'ul.reviews li#1.review .stars', text: '3'
+    expect(page).to have_css "ul.reviews li##{line_items.first.item.id}.review .body", text: 'Body'
+    expect(page).to have_css "ul.reviews li##{line_items.first.item.id}.review .title", text: 'Title'
+    expect(page).to have_css "ul.reviews li##{line_items.first.item.id}.review .stars", text: '3'
 	end
 end

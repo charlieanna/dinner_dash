@@ -30,9 +30,9 @@ feature 'user signs in' do
 
   scenario 'does not clear the cart' do
     user = create(:user)
-    create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
+    item = create(:item, title: 'Deviled Eggs', description: 'Eggs from Chicken', price: 10.0)
     visit root_path
-    within('ul.items li#1') do
+    within("ul.items li##{item.id}") do
       click_button 'Add to Cart'
     end
     expect(page).to have_text 'You have 1 items in your cart'

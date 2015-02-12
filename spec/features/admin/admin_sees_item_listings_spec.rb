@@ -10,7 +10,7 @@ feature 'As an admin when I visit the items page' do
     sign_in_as admin
 		visit items_path
 		within('ul.items') do
-      within('li#1') do
+      within("li##{item1.id}") do
         expect(page).to have_css 'span.title', text: item1.title
         expect(page).to have_css 'span.description', text: item1.description
         expect(page).to have_css 'span.price', text: item1.price
@@ -18,7 +18,7 @@ feature 'As an admin when I visit the items page' do
           expect(page).to have_link 'Edit'
         end
       end
-      within('li#2') do
+      within("li##{item2.id}") do
         expect(page).to have_css 'span.title', text: item2.title
         expect(page).to have_css 'span.description', text: item2.description
         expect(page).to have_css 'span.price', text: item2.price
@@ -26,7 +26,7 @@ feature 'As an admin when I visit the items page' do
           expect(page).to have_link 'Edit'
         end
       end
-      within('li#3') do
+      within("li##{item3.id}") do
         expect(page).to have_css 'span.title', text: item3.title
         expect(page).to have_css 'span.description', text: item3.description
         expect(page).to have_css 'span.price', text: item3.price
@@ -34,7 +34,7 @@ feature 'As an admin when I visit the items page' do
           expect(page).to have_link 'Edit'
         end
       end
-      within('li#4') do
+      within("li##{item4.id}") do
         expect(page).to have_css 'span.title', text: item4.title
         expect(page).to have_css 'span.description', text: item4.description
         expect(page).to have_css 'span.price', text: item4.price
