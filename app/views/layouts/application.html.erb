@@ -13,11 +13,11 @@
       <% end %>
 
       <% if current_user %>
-        <span class="current_user">Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %></span>
+        <span class="current_user">Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout', class: 'btn btn-danger' %></span>
       <% else %>
-        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <%= link_to 'Login', '/login', class: 'btn btn-primary' %> | <%= link_to 'Signup', '/signup', class: 'btn btn-primary' %>
       <% end %>
-      <%= link_to "My Cart", @cart %>
+      <%= link_to "My Cart", @cart, class: 'btn btn-primary' %>
       <%= yield %>
     </div>
   </body>
