@@ -10,19 +10,17 @@ describe Item do
   it { should have_db_index(:title) }
   it { should have_attached_file(:photo) }
   # it { should validate_attachment_presence(:photo) }
-   it do
-    should validate_numericality_of(:price).
-      is_greater_than(0)
+  it do
+    should validate_numericality_of(:price)
+      .is_greater_than(0)
   end
   it 'title should not be an empty string' do
-		item = Item.new(title: "", description: "description", price: 10)
-	  expect(item).not_to be_valid
-	end
+    item = Item.new(title: '', description: 'description', price: 10)
+    expect(item).not_to be_valid
+  end
 
-	it 'description should not be an empty string' do
-		item = Item.new(title: "title", description: "", price: 10)
-	  expect(item).not_to be_valid
-	end
-
-
+  it 'description should not be an empty string' do
+    item = Item.new(title: 'title', description: '', price: 10)
+    expect(item).not_to be_valid
+  end
 end

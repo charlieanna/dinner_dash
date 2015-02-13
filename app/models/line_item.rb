@@ -4,6 +4,6 @@ class LineItem < ActiveRecord::Base
   delegate :title, to: :item
 
   def total_price
-  	item.price * quantity
+    item.price * quantity
   end
 end

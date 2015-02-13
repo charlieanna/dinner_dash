@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "homes#index"
+  root to: 'homes#index'
 
   resources :categories, only: [:show, :new, :create, :index]
 
@@ -20,7 +20,6 @@ Rails.application.routes.draw do
     end
   end
   resources :orders, only: [:new, :create, :index, :show] do
-
     member do
       get :cancel
     end
@@ -28,6 +27,6 @@ Rails.application.routes.draw do
       get :filter
     end
   end
-    resource :search
-  
+  resource :search
+  resource :sales
 end

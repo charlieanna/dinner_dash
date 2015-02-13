@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'user can write a review for an item' do
   scenario 'only if he has purchased the item' do
-  	order = create(:order, status: 'completed')
+    order = create(:order, status: 'completed')
     line_items = create_list(:line_item, 1)
     order.line_items << line_items
     sign_in_as order.user

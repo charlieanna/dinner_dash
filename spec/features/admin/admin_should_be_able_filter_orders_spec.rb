@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Admin filters the orders based on status' do
   scenario 'using a dropdown button' do
-    create(:order, status: "ordered")
-    create(:order, status: "paid")
+    create(:order, status: 'ordered')
+    create(:order, status: 'paid')
     admin = create(:admin_user)
     sign_in_as admin
     visit orders_path

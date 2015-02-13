@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :category do
     title 'Kitchen'
   end
@@ -22,19 +21,22 @@ FactoryGirl.define do
     sequence :description do |n|
       "description#{n}"
     end
-    sequence(:price,0) do |n|
+    sequence(:price, 0) do |n|
       n + 1
     end
+    sale
+    categories { [create(:category)] }
+  end
 
-    categories {[create(:category)]}
+  factory :sale do
   end
 
   factory :order do
     user
-    name "Ankur Kothari"
-    email "ankothari@gmail.com"
-    address "Bangalore"
-    pay_type "Check"
+    name 'Ankur Kothari'
+    email 'ankothari@gmail.com'
+    address 'Bangalore'
+    pay_type 'Check'
     status 'ordered'
   end
 
@@ -54,8 +56,8 @@ FactoryGirl.define do
     sequence :email do |n|
       "person#{n}@example.com"
     end
-  	password "aaaaaa"
-  	name "ankur"
+    password 'aaaaaa'
+    name 'ankur'
     factory :admin_user do
       admin true
     end

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-
   def new
-  	@user = User.new
+    @user = User.new
   end
 
   def create
@@ -9,13 +8,13 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       set_cart
-      redirect_to '/', alert: "You have successfully signed up"
+      redirect_to '/', alert: 'You have successfully signed up'
     else
-      redirect_to '/signup', alert: "Something went wrong"
+      redirect_to '/signup', alert: 'Something went wrong'
     end
   end
 
-private
+  private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

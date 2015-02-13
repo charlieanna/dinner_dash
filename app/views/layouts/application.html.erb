@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DinnerDash</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	 <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "alert alert-info" %>
-  <% end %>
+  <head>
+    <title>DinnerDash</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class='container'>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-info" %>
+      <% end %>
 
-<% if current_user %>
-  <span class="current_user">Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %></span>
-
-
-<% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %>
-<%= link_to "My Cart", @cart %>
-<%= yield %>
-
-</body>
+      <% if current_user %>
+        <span class="current_user">Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %></span>
+      <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+      <% end %>
+      <%= link_to "My Cart", @cart %>
+      <%= yield %>
+    </div>
+  </body>
 </html>

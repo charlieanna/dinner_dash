@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211174929) do
+ActiveRecord::Schema.define(version: 20150213104227) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -23,7 +26,10 @@ ActiveRecord::Schema.define(version: 20150211174929) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sale_id"
   end
+
+  add_index "categories", ["sale_id"], name: "index_categories_on_sale_id", using: :btree
 
   create_table "categories_items", force: true do |t|
     t.integer  "category_id"
@@ -32,8 +38,8 @@ ActiveRecord::Schema.define(version: 20150211174929) do
     t.datetime "updated_at"
   end
 
-  add_index "categories_items", ["category_id"], name: "index_categories_items_on_category_id"
-  add_index "categories_items", ["item_id"], name: "index_categories_items_on_item_id"
+  add_index "categories_items", ["category_id"], name: "index_categories_items_on_category_id", using: :btree
+  add_index "categories_items", ["item_id"], name: "index_categories_items_on_item_id", using: :btree
 
   create_table "items", force: true do |t|
     t.string   "title"
@@ -47,9 +53,11 @@ ActiveRecord::Schema.define(version: 20150211174929) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "state",              default: "open"
+    t.integer  "sale_id"
   end
 
-  add_index "items", ["title"], name: "index_items_on_title"
+  add_index "items", ["sale_id"], name: "index_items_on_sale_id", using: :btree
+  add_index "items", ["title"], name: "index_items_on_title", using: :btree
 
   create_table "line_items", force: true do |t|
     t.integer  "item_id"
@@ -60,9 +68,9 @@ ActiveRecord::Schema.define(version: 20150211174929) do
     t.integer  "order_id"
   end
 
-  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
-  add_index "line_items", ["item_id"], name: "index_line_items_on_item_id"
-  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
+  add_index "line_items", ["item_id"], name: "index_line_items_on_item_id", using: :btree
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
 
   create_table "orders", force: true do |t|
     t.string   "name"
@@ -75,7 +83,7 @@ ActiveRecord::Schema.define(version: 20150211174929) do
     t.string   "status",     default: "ordered"
   end
 
-  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "reviews", force: true do |t|
     t.string   "title"
@@ -87,6 +95,13 @@ ActiveRecord::Schema.define(version: 20150211174929) do
     t.integer  "user_id"
   end
 
+  create_table "sales", force: true do |t|
+    t.string   "name"
+    t.decimal  "discount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -96,6 +111,6 @@ ActiveRecord::Schema.define(version: 20150211174929) do
     t.boolean  "admin",           default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
 end

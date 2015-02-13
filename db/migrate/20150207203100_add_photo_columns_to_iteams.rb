@@ -1,7 +1,7 @@
 class AddPhotoColumnsToIteams < ActiveRecord::Migration
- def self.up
+  def self.up
     add_attachment :items, :photo
-  end
+   end
 
   def self.down
     remove_attachment :items, :photo

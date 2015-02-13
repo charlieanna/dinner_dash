@@ -4,16 +4,16 @@ class ReviewsController < ApplicationController
   end
 
   def new
-  	item = Item.find(params[:item_id])
-  	@review = item.reviews.build
+    item = Item.find(params[:item_id])
+    @review = item.reviews.build
   end
 
   def create
-  	item = Item.find(params[:item_id])
-  	review = item.reviews.create(review_params)
-  	review.user = current_user
-  	review.save
-  	redirect_to item_reviews_path(item)
+    item = Item.find(params[:item_id])
+    review = item.reviews.create(review_params)
+    review.user = current_user
+    review.save
+    redirect_to item_reviews_path(item)
   end
 
   def edit
@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     @review.update_attributes(review_params)
-    redirect_to item_reviews_path, alert: "Review has been updated"
+    redirect_to item_reviews_path, alert: 'Review has been updated'
   end
 
   private
