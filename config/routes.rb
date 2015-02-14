@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   end
   resource :search
   resource :sales
+  resources :payment_notifications
 end

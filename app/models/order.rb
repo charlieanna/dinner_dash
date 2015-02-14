@@ -21,12 +21,13 @@ class Order < ActiveRecord::Base
     sum
   end
 
-   def paypal_url(return_url)
+   def paypal_url(return_url, notify_url)
      values = {
      :business => 'jainadi57@gmail.com',
          :cmd => '_cart',
      :upload => 1,
      :return => return_url,
+     :notify_url => notify_url
      }  
     values.merge!({
      "amount_1" => 100,
