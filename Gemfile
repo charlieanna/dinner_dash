@@ -28,7 +28,7 @@ gem 'rubocop', require: false
 gem 'spring',        group: :development
 group :development do
   gem 'rails_best_practices'
-  gem 'hold_please'
+  # gem 'hold_please'
   gem 'do_not_want'
   gem 'rack-mini-profiler'
   gem 'bullet'

@@ -80,7 +80,8 @@ ActiveRecord::Schema.define(version: 20150214194115) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.string   "status",     default: "ordered"
+    t.string   "status",       default: "ordered"
+    t.datetime "purchased_at"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -89,7 +90,7 @@ ActiveRecord::Schema.define(version: 20150214194115) do
     t.text     "params"
     t.string   "status"
     t.string   "transaction_id"
-    t.integer  "cart_id"
+    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
