@@ -14,6 +14,7 @@ feature 'user cannot review an unpurchased item' do
     line_items = create_list(:line_item, 1)
     order.line_items << line_items
     sign_in_as user
+    visit root_path
     expect(page).not_to have_link 'Write a review'
   end
 end

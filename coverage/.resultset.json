@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/helpers/application_helper.rb": [
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/helpers/application_helper.rb": [
         1,
         1,
         0,
@@ -13,28 +13,16 @@
         null,
         null
       ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/helpers/items_helper.rb": [
-        1,
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/helpers/items_helper.rb": [
         1,
         1,
         0,
-        null,
+        0,
         0,
         null,
         null
       ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/models/sale.rb": [
-        1,
-        null
-      ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/models/item.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/user.rb": [
         1,
         1,
         1,
@@ -42,66 +30,77 @@
         1,
         1,
         null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/models/category.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/homes_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
         null,
         1,
         0,
         0,
         null,
+        0,
         null,
         null,
         1,
-        3,
+        0,
+        0,
         null,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/category.rb": [
+        1,
+        1,
         1,
         null
       ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/concerns/current_cart.rb": [
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/homes_controller.rb": [
         1,
-        1,
-        null,
-        1,
-        null,
         1,
         2,
         2,
-        2,
+        null,
+        null
+      ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        10,
+        null,
+        1,
+        null
+      ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/concerns/current_cart.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        9,
+        9,
+        9,
         1,
         1,
         null,
         null,
         null
       ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/models/cart.rb": [
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/cart.rb": [
         1,
         1,
         1,
@@ -111,15 +110,94 @@
         null,
         null
       ],
-      "/Users/charlieanna/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/sales_controller.rb": [
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/item.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
         1,
         null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/controllers/sales_controller.rb": [
+        1,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apple/Documents/workspace/jumpstartlab/dinner_dash/app/models/sale.rb": [
+        1,
         null
       ]
     },
-    "timestamp": 1423826624
+    "timestamp": 1423884024
   }
 }

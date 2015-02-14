@@ -1,0 +1,11 @@
+<%= form_for :sale, url: sales_path do |f| %>
+  <%= f.label :name  %>
+  <%= f.text_field :name %>
+  <%= f.label :discount %>
+  <%= f.number_field :discount %>
+
+  <div class="field">
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :title %>
+  </div>
+  <%= f.submit 'Create Sale' %>
+<% end %>

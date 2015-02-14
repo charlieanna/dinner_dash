@@ -1,6 +1,9 @@
-<ul class="categories">
+<%= link_to 'New Sale', new_sales_path %>
+<ul class="sale_categories">
 <% @categories.each do |category| %>
-  <%= link_to category.title, category %>
+  <li class='sale_category'>
+  <span class='category_percent_discount'>Discount: <%= link_to category.title, category %>
+</li>
   <% end %>
 </ul>
 <ul class="sale_items">
@@ -9,8 +12,8 @@
       <span class='title'><%= item.title %></span>
       <span class='description'><%= item.description %></span>
       <span class='actual_price'><%= item.price %></span>
-      <span class='sale_price'><%= item.price_after_discount %></span>
-      <span class='percent_discount'><%= item.sale.discount %>%</span>
+      <span class='sale_price'>Sale price: <%= item.price_after_discount %></span>
+      <span class='percent_discount'>Discount: <%= item.sale.discount %>%</span>
       <span class='photo'><%= image_tag item.photo.url %></span>
      </li>
   <% end %>
