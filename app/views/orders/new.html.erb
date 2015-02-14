@@ -4,3 +4,4 @@
   <%= render 'form' %>
 </fieldset>
 </div>
+<%= link_to 'Pay', @order.paypal_url(orders_url) %> 

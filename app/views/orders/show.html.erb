@@ -1,1 +1,2 @@
 <%= render @order.line_items %>
+<%= link_to 'Pay', @order.paypal_url(orders_url) %> 
