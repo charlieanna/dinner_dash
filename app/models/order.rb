@@ -23,15 +23,15 @@ class Order < ActiveRecord::Base
 
    def paypal_url(return_url)
      values = {
-     :business => 'xxxxxxxx@xxx.com',
+     :business => 'jainadi57@gmail.com',
          :cmd => '_cart',
      :upload => 1,
      :return => return_url,
      }  
     values.merge!({
-     "amount_1" => total_amount,
-     "item_name_1" => name,
-     "item_number_1" => id,
+     "amount_1" => 100,
+     "item_name_1" => "name",
+     "item_number_1" => 1,
      "quantity_1" => '1'
      })
           # For test transactions use this URL
