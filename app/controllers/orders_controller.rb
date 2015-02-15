@@ -17,11 +17,11 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
+        # Cart.destroy(session[:cart_id])
+        # session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
         format.html do
-          redirect_to root_path, notice:
+          redirect_to @order, notice:
                       'Thank you for your order.'
         end
         format.json do
@@ -63,4 +63,5 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:name, :address, :pay_type, :email)
   end
+
 end

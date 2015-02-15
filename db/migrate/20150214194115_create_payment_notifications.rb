@@ -4,10 +4,10 @@ class CreatePaymentNotifications < ActiveRecord::Migration
       t.text :params
       t.string :status
       t.string :transaction_id
-      t.integer :order_id
+      t.integer :cart_id
 
       t.timestamps
     end
-    add_column :orders, :purchased_at, :timestamp
+    add_column :carts, :purchased_at, :timestamp
   end
 end

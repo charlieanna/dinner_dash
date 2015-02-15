@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   resources :line_items, only: [:create, :destroy, :edit, :update]
-  resources :cart, only: [:show]
+  resources :cart, only: [:show, :delete]
   resources :items, only: [:index, :edit, :new, :update, :create] do
     resources :reviews, only: [:index, :new, :create, :edit, :update]
     member do

@@ -5,6 +5,10 @@ module CurrentCart
 
   def set_cart
     @cart = Cart.find_or_initialize_by(id: session[:cart_id])
+    if session[:cart_id]
+      session[:cart_id] = nil if @cart.purchased_at
+    end
+    
     @cart.user_id = session[:user_id] if session[:user_id]
     if @cart.new_record?
       @cart.save!

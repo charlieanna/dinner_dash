@@ -1,1 +1,3 @@
 <%= render @order.line_items %>
+
+<%= button_to 'Pay', @order.paypal_url(orders_url, payment_notifications_url) %> 

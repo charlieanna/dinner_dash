@@ -3,17 +3,19 @@
   <%= select_tag "status", options_for_select([ "paid", "cancelled", 'ordered', 'completed' ], "MasterCard") %>
   <%= submit_tag "Filter" %>
 <% end %>
-<ul class='orders'%>
-<li class='order'>
+<ul class='orders list-unstyled'%>
+
 	<% @orders.each do |order| %>
+  <li class='order'>
   <%= link_to order.name, order %>
   <%= order.user.email %>
   <%= order.status %>
   <% if order.status == "paid" || order.status == 'ordered' %>
     <%= link_to 'Cancel', cancel_order_path(order) %>
   <% end %>
-  <%= order.created_at.strftime("%B %d %Y at %I:%M %p") %></li>
-  created by <%= order.user.name %> <%= order.email %></li>
+  <%= order.created_at.strftime("%B %d %Y at %I:%M %p") %>
+  created by <%= order.user.name %> <%= order.email %>
+  </li>
 <% end %>
-</li>
+
 </ul>

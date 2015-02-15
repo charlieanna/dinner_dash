@@ -32,7 +32,9 @@ group :development do
   gem 'do_not_want'
   gem 'rack-mini-profiler'
   gem 'bullet'
+  gem 'byebug'
 end
+gem "letter_opener", :group => :development
 
 group :development, :test do
   gem 'awesome_print'
